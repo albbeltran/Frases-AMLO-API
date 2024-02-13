@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3001;
+require("dotenv").config();
 
-const dotenv = require('dotenv').config();
+const repositorio = require("./repositorio");
 
 app.all("*", function (req, res, next) {
   res.set("Access-Control-Allow-Origin", "*");
@@ -10,8 +10,10 @@ app.all("*", function (req, res, next) {
 });
 
 app.get("/api/v1/frases-amlo/:num?", (req, res, next) => {
-  res.send("Me canso ganso");
+  res.send(repositorio.getRandom(req.params.num || 1));
 });
+
+const port = process.env.PORT || 3001;
 
 app.listen(port, function () {
   console.log("Server running on port", port);
