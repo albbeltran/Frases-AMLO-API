@@ -2,7 +2,7 @@
 
 # Frases AMLO API
 
-Una API simple para obtener frases de AMLO, ¡viva la 4T!
+Una API simple para obtener frases de AMLO.
 
 ## API
 
